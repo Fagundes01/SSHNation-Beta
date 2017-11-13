@@ -1,0 +1,883 @@
+#! / bin / bash
+
+echo 3 > / proc / sys / vm / drop_caches && sysctl -w vm.drop_caches = 3
+história -c
+Claro
+se [ $ ( id -u )  -eq 0]
+então
+	Claro
+outro
+	se  echo  $ ( id )  | grep sudo > / dev / null
+	então
+	Claro
+	echo -e " \ 033 [1; 37mVocê não é root "
+	echo -e " \ 033 [1; 37mSeu Usuário está no grupo sudo "
+	echo -e " \ 033 [1; 37mPara tornar-se um Usuário do raiz execute \ 033 [1; 31msudo su \ 033 [1; 37m ou execute \ 033 [1; 31msudo $ 0 \ 033 [0m "
+	Saída
+	outro
+	Claro
+	echo -e " Você não está como usuário root, nem com seus direitos (sudo) \ nPara tornar-se um usuário root execute \ 033 [1; 31msu \ 033 [0m e digite sua senha root "
+	Saída
+	fi
+fi
+
+echo -e " \ 033 [1; 32mAguarde ... \ 033 [0m "
+durma 3
+
+cat -n / etc / issue | grep 1 | corte -d '  ' -f6,7,8 | sed ' s / 1 // '  | sed ' s / // '  > / etc / so
+
+ip = $ ( ip addr | grep ' inet '  | grep -v inet6 | grep -vE ' 127 \. [0-9] {1,3} \. [0-9] {1,3} \. [0 -9] {1,3} '  | grep -o -E ' [0-9] {1,3} \. [0-9] {1,3} \. [0-9] {1,3} \. [0-9] {1,3} '  | head -1 )
+se [[ " $ ip "  =  " " ]] ;  então
+
+ip = $ ( wget -qO- ipv4.icanhazip.com )
+
+fi
+
+
+apt-get --reinstall install python-minimal
+
+apt-get install toilet figto 2> / dev / null
+yum install toilet figlet 2> / dev / null
+
+eco  " "
+história -c
+Claro
+
+# echo 'toilet -f mono12 -F gay RDY SOFT.' >> ~ / .bashrc
+
+eco  "  "  >> /etc/sysctl.conf
+Echo  " #RDY "  >> /etc/sysctl.conf
+echo  " net.ipv4.tcp_window_scaling = 1
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_rmem = 4096 87380 16777216
+net.ipv4.tcp_wmem = 4096 16384 16777216
+net.ipv4.tcp_low_latency = 1
+net.ipv4.tcp_slow_start_after_idle = 0 "  >> /etc/sysctl.conf
+eco  " "
+/ sbin / sysctl -p /etc/sysctl.conf
+eco  " "
+Claro
+
+rm / root / * nstal *  > / dev / null
+Claro
+eco  " "
+echo -e " \ 033 [1; 36m [3/3] Deseja ativar a compressão SSH? \ 033 [0m " ;
+leia -p " [s / n]: " -e -s sshcompression
+
+se [[ " $ logar "  =  ' n ' ]] ;  então
+echo  ' echo "" '  >>  ~ /.bashrc
+Echo  ' echo -e "\ 033 [1; 32m © Copyright 2016 - 2017 | RDY SOFTWARE - Todos os direitos reservados \ 033 [0m" '  >>  ~ /.bashrc
+echo  ' echo "" '  >>  ~ /.bashrc
+logarsv = " menu "
+logarsv1 = " desativado na inicialização "
+fi
+Claro
+eco  " "
+echo -e " \ 033 [1; 36m [3/3] \ 033 [0m "
+eco  " "
+echo -e " \ 033 [1; 32m√ \ 033 [01; 37mRDY SOFTWARE \ 033 [0m "
+echo -e " \ 033 [1; 32m√ \ 033 [01; 37mCANAL: \ 033 [1; 31m @ MegaTunelVPS "
+echo -e " \ 033 [1; 32m√ \ 033 [01; 37mPARA OS SISTEMAS: \ 033 [1; 31mDebian, Ubunto, Centos "
+echo -e " \ 033 [1; 32m√ \ 033 [01; 37mSISTEMA OPERACIONAL: \ 033 [1; 31m $ ( cat / etc / so ) "
+echo -e " \ 033 [1; 32m√ \ 033 [01; 37mIP: \ 033 [1; 31m $ ip "
+echo -e " \ 033 [1; 32m√ \ 033 [1; 37mPORTAS PROXY: \ 033 [1; 31m 80, 8080, 8799, 3128 \ 033 [0m "
+echo -e " \ 033 [1; 32m√ \ 033 [1; 37mSSH NAS PORTAS: \ 033 [1; 31m443, 22 \ 033 [0m "
+echo -e " \ 033 [1; 32m√ \ 033 [1; 37mSSH NOS IPs: \ 033 [1; 31m $ ip , localhost, 127.0.0.1 \ 033 [0m "
+eco  " ------------------------------------------------ ------- "
+echo -e " \ 033 [1; 32m√ \ 033 [1; 37mPara configurar o OpenVPN, após uma configuração do servidor, digite: \ 033 [1; 31mOpenVPN \ 033 [0m "
+eco  " ------------------------------------------------ ------- "
+eco  " "
+echo -e " \ 033 [1; 32m√ \ 033 [1; 37mMensagem: Louvai ao Senhor todos os povos da terra, porque sua misericórdia dura para sempre! \ 033 [0m "
+eco " "
+função  sshd_config () {  echo  " Porta 22
+Porto 443
+Protocolo 2
+KeyRegenerationInterval 3600
+ServerKeyBits 1024
+SyslogFacility AUTH
+LogLevel INFO
+LoginGraceTime 120
+PermitRootLogin sim
+StrictModes sim
+RSAAutenticação sim
+PubkeyAuthentication yes
+IgnoreRhosts yes
+RhostsRSAAutenticação não
+HostbasedAuthentication no
+PermitEmptyPasswords não
+ChallengeResponseAuthentication no
+Senha de autenticação sim
+X11Forwarding yes
+X11DisplayOffset 10
+PrintMotd no
+PrintLastLog sim
+TCPKeepAlive sim
+#UseLogin não
+AcceptEnv LANG LC_ *
+Subsistema sftp / usr / lib / openssh / sftp-server
+UsePAM sim "  > / etc / ssh / sshd_config
+}
+
+função  AddHost () {  echo  ' #! / bin / bash
+echo "Qual host prostituição adicionar?"
+read -p ":" host
+echo "$ host" >> / etc / payloads
+squid -k reconfigure> / dev / null 2> / dev / null
+squid3 -k reconfigure> / dev / null 2> / dev / null
+echo "$ host adicionado" '  > / bin / Adicionar Host
+Chmod a + x / bin / AddHost
+}
+
+função de  carga útil () {  echo  " www.speedtest.net
+.Teste rápido.
+telegram.me/MegaTunelVPS "  > / etc / loadloads
+}
+
+se [[ " $ sshcompression "  =  ' s ' ]] ;  então
+	grep -v " ^ Compressão sim " / etc / ssh / sshd_config > / tmp / sshcp && mv / tmp / sshcp / etc / ssh / sshd_config
+	Echo  " Compressão sim "  >> / etc / ssh / sshd_config
+fi
+
+se [[ " $ sshcompression "  =  ' n ' ]] ;  então
+	grep -v " ^ Compressão sim " / etc / ssh / sshd_config > / tmp / sshcp && mv / tmp / sshcp / etc / ssh / sshd_config
+fi
+
+se gato / etc / so | grep -i ubuntu | grep 16 1> / dev / null 2> / dev / null ;  então
+echo -e " \ 033 [1; 37mConfigurando ... \ 033 [0m "
+dormir 2s
+echo -e " \ 033 [1; 37mInstalando atualizações ... \ 033 [0m "
+apt-get update 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mConfigurando squid proxy ... \ 033 [0m "
+
+apt-get install -y squid3 1> / dev / null 2> / dev / null
+
+apt-get install -y nano 1> / dev / null 2> / dev / null
+
+apt-get install figlet -y 1> / dev / null 2> / dev / null
+
+service apache2 stop 1> / dev / null 2> / dev / null
+sshd_config
+serviço ssh reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mTerminando ... \ 033 [0m "
+eco  " http_port 80
+http_port 8080
+http_port 8799
+http_port 3128
+http_port 1080
+http_port 8118
+SOFTWARE do nome_de_botão visible_hostname
+acl ip dstdomain -i $ ip
+acl rdy dstdomain -i 127.0.0.1
+acl rdy dstdomain -i 200.169.126.11
+acl rdy dstdomain -i localhost
+acl rdy dstdomain -i localnet
+aceita dstdomain -i GET
+aceita dstdomain -i POST
+acl aceita dstdomain -i OPÇÕES
+aceita dstdomain -i CONECTAR
+acl aceita dstdomain -i PUT
+acl HEAD dstdomain -i HEAD
+aceita dstdomain -i TRACE
+acl aceita dstdomain -i OPÇÕES
+acl aceita dstdomain -i PATCH
+aceita dstdomain -i PROPATCH
+aceita dstdomain -i DELETE
+aceita dstdomain -i PEDIDO
+aceita dstdomain -i MÉTODO
+aceita dstdomain -i NETDATA
+aceita dstdomain -i MOVE
+acl all src 0.0.0.0/0
+http_access permite ip
+http_access permite rdy
+http_access permite aceitar
+http_access permite HEAD
+http_access negar tudo
+encaminhado para fora
+request_header_access Permitir permitir tudo
+request_header_access Authorization allow all
+request_header_access WWW-Authenticate permite tudo
+request_header_access Proxy-Authorization permite que todos
+request_header_access Proxy-Authenticate permite que todos
+request_header_access Cache-Control permite que todos
+request_header_access Content-Encoding permite que todos
+request_header_access Conteúdo-comprimento permite que todos
+request_header_access Content-Type permite tudo
+request_header_access Data permite tudo
+request_header_access Expira permite que todos
+request_header_access Host permite a todos
+request_header_access If-Modified-Since allow all
+request_header_access Last-Modified permite tudo
+request_header_access Location permite a todos
+request_header_access Pragma permite que todos
+request_header_access Aceite permitir tudo
+request_header_access Accept-Charset permite que todos
+request_header_access Accept-Encoding permite que todos
+request_header_access Accept-Language permite tudo
+request_header_access Content-Language permite tudo
+request_header_access Mime-Version permite que todos
+request_header_access Repetir-Depois permitir tudo
+request_header_access Title permite tudo
+request_header_access A conexão permite a todos
+request_header_access Proxy-Connection permite que todos
+request_header_access User-Agent permite tudo
+request_header_access Cookie permite tudo
+request_header_access Tudo nega tudo
+request_header_access Referer permite tudo
+request_header_access Host permite a todos
+via off "  > /etc/squid/squid.conf
+serviço squid reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mPronto !! \ 033 [0m "
+echo -e " \ 033 [01; 31m Configuração concluída! \ 033 [0m "
+find / -name ' * onfigserver.rd * ' -exec rm {} \;  > / dev / null 2> / dev / null
+eco  " "
+história -c
+echo -e " \ 033 [1; 32mInstalando BadVPN, aguarde ... \ 033 [0m "
+
+apt-get install -y gcc > / dev / null 2> / dev / null
+apt-get install -y make > / dev / null 2> / dev / null
+apt-get install -y g ++ > / dev / null 2> / dev / null
+apt-get install -y openssl > / dev / null 2> / dev / null
+apt-get install -y build-essential > / dev / null 2> / dev / null
+apt-get install -y cmake > / dev / null 2> / dev / null
+
+echo -e " \ 033 [1; 32mBaixando arquivos BadVPN ... " ;  CD
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2 -o / dev / null
+história -c
+tar -xf badvpn-1.999.128.tar.bz2
+echo -e " Iniciando config ... "
+mkdir / etc / badvpn-install
+cd / etc / badvpn-install
+cmake ~ /badvpn-1.999.128 -DBUILD_NOTHING_BY_DEFAULT = 1 -DBUILD_UDPGW = 1 > / dev / null 2> / dev / null
+echo -e " \ 033 [1; 32mConcluindo ... \ 033 [0m "
+faça instalar
+Claro
+
+rm -rf / etc / badvpn-install
+cd  ; rm -rf badvpn.sh badvpn-1.999.128 / badvpn-1.999.128.tar.bz2 > / dev / null 2> / dev / null
+
+Claro
+
+eco  " "
+
+echo -e " \ 033 [1; 32m√ Concluído! √ \ 033 [0m "
+eco  " "
+história -c
+saia 0
+fi
+
+se gato / etc / so | grep -i ubuntu 1> / dev / null 2> / dev / null ;  então
+echo -e " \ 033 [1; 37mConfigurando ... \ 033 [0m "
+dormir 2s
+echo -e " \ 033 [1; 37mInstalando atualizações ... \ 033 [0m "
+apt-get update 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mConfigurando squid proxy ... \ 033 [0m "
+apt-get install -y squid3 1> / dev / null 2> / dev / null
+
+apt-get install figlet -y 1> / dev / null 2> / dev / null
+
+apt-get install -y nano 1> / dev / null 2> / dev / null
+
+service apache2 stop 1> / dev / null 2> / dev / null
+sshd_config
+serviço ssh reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mTerminando ... \ 033 [0m "
+eco  " http_port 80
+http_port 8080
+http_port 8799
+http_port 3128
+http_port 1080
+http_port 8118
+SOFTWARE do nome_de_botão visible_hostname
+acl ip dstdomain -i $ ip
+acl rdy dstdomain -i 127.0.0.1
+acl rdy dstdomain -i 200.169.126.11
+acl rdy dstdomain -i localhost
+acl rdy dstdomain -i localnet
+aceita dstdomain -i GET
+aceita dstdomain -i POST
+acl aceita dstdomain -i OPÇÕES
+aceita dstdomain -i CONECTAR
+acl aceita dstdomain -i PUT
+acl HEAD dstdomain -i HEAD
+aceita dstdomain -i TRACE
+acl aceita dstdomain -i OPÇÕES
+acl aceita dstdomain -i PATCH
+aceita dstdomain -i PROPATCH
+aceita dstdomain -i DELETE
+aceita dstdomain -i PEDIDO
+aceita dstdomain -i MÉTODO
+aceita dstdomain -i NETDATA
+aceita dstdomain -i MOVE
+acl all src 0.0.0.0/0
+http_access permite ip
+http_access permite rdy
+http_access permite aceitar
+http_access permite HEAD
+http_access negar tudo
+encaminhado para fora
+request_header_access Permitir permitir tudo
+request_header_access Authorization allow all
+request_header_access WWW-Authenticate permite tudo
+request_header_access Proxy-Authorization permite que todos
+request_header_access Proxy-Authenticate permite que todos
+request_header_access Cache-Control permite que todos
+request_header_access Content-Encoding permite que todos
+request_header_access Conteúdo-comprimento permite que todos
+request_header_access Content-Type permite tudo
+request_header_access Data permite tudo
+request_header_access Expira permite que todos
+request_header_access Host permite a todos
+request_header_access If-Modified-Since allow all
+request_header_access Last-Modified permite tudo
+request_header_access Location permite a todos
+request_header_access Pragma permite que todos
+request_header_access Aceite permitir tudo
+request_header_access Accept-Charset permite que todos
+request_header_access Accept-Encoding permite que todos
+request_header_access Accept-Language permite tudo
+request_header_access Content-Language permite tudo
+request_header_access Mime-Version permite que todos
+request_header_access Repetir-Depois permitir tudo
+request_header_access Title permite tudo
+request_header_access A conexão permite a todos
+request_header_access Proxy-Connection permite que todos
+request_header_access User-Agent permite tudo
+request_header_access Cookie permite tudo
+request_header_access Tudo nega tudo
+request_header_access Referer permite tudo
+request_header_access Host permite a todos
+via off "  > /etc/squid3/squid.conf
+
+service squid3 reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [01; 31mConfiguração concluída! \ 033 [0m "
+find / -name ' * onfigserver.rd * ' -exec rm {} \;  > / dev / null 2> / dev / null
+eco  " "
+história -c
+echo -e " \ 033 [1; 32mInstalando BadVPN, aguarde ... \ 033 [0m "
+
+apt-get install -y gcc > / dev / null 2> / dev / null
+apt-get install -y make > / dev / null 2> / dev / null
+apt-get install -y g ++ > / dev / null 2> / dev / null
+apt-get install -y openssl > / dev / null 2> / dev / null
+apt-get install -y build-essential > / dev / null 2> / dev / null
+apt-get install -y cmake > / dev / null 2> / dev / null
+
+echo -e " \ 033 [1; 32mBaixando arquivos BadVPN ... " ;  CD
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2 -o / dev / null
+história -c
+tar -xf badvpn-1.999.128.tar.bz2
+echo -e " Iniciando config ... "
+mkdir / etc / badvpn-install
+cd / etc / badvpn-install
+cmake ~ /badvpn-1.999.128 -DBUILD_NOTHING_BY_DEFAULT = 1 -DBUILD_UDPGW = 1 > / dev / null 2> / dev / null
+echo -e " \ 033 [1; 32mConcluindo ... \ 033 [0m "
+faça instalar
+Claro
+
+rm -rf / etc / badvpn-install
+cd  ; rm -rf badvpn.sh badvpn-1.999.128 / badvpn-1.999.128.tar.bz2 > / dev / null 2> / dev / null
+
+Claro
+
+eco  " "
+
+echo -e " \ 033 [1; 32m√ Concluído! √ \ 033 [0m "
+eco  " "
+história -c
+saia 0
+fi
+
+se gato / etc / so | grep -i centos 1> / dev / null 2> / dev / null ;  então
+echo -e " \ 033 [01; 37mConfigurando ... \ 033 [0m "
+dormir 2s
+echo -e " \ 033 [1; 37mInstalando atualizações ... \ 033 [0m "
+yum -y update 1> / dev / null 2> / dev / null
+
+yum install -y squid 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mConfigurando squid proxy ... \ 033 [0m "
+service httpd stop 1> / dev / null 2> / dev / null
+
+sshd_config
+serviço sshd reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mTerminando ... \ 033 [0m "
+eco  " http_port 80
+http_port 8080
+http_port 8799
+http_port 3128
+http_port 1080
+http_port 8118
+SOFTWARE do nome_de_botão visible_hostname
+acl ip dstdomain -i $ ip
+acl rdy dstdomain -i 127.0.0.1
+acl rdy dstdomain -i 200.169.126.11
+acl rdy dstdomain -i localhost
+acl rdy dstdomain -i localnet
+aceita dstdomain -i GET
+aceita dstdomain -i POST
+acl aceita dstdomain -i OPÇÕES
+aceita dstdomain -i CONECTAR
+acl aceita dstdomain -i PUT
+acl HEAD dstdomain -i HEAD
+aceita dstdomain -i TRACE
+acl aceita dstdomain -i OPÇÕES
+acl aceita dstdomain -i PATCH
+aceita dstdomain -i PROPATCH
+aceita dstdomain -i DELETE
+aceita dstdomain -i PEDIDO
+aceita dstdomain -i MÉTODO
+aceita dstdomain -i NETDATA
+aceita dstdomain -i MOVE
+acl all src 0.0.0.0/0
+http_access permite ip
+http_access permite rdy
+http_access permite aceitar
+http_access permite HEAD
+http_access negar tudo
+encaminhado para fora
+request_header_access Permitir permitir tudo
+request_header_access Authorization allow all
+request_header_access WWW-Authenticate permite tudo
+request_header_access Proxy-Authorization permite que todos
+request_header_access Proxy-Authenticate permite que todos
+request_header_access Cache-Control permite que todos
+request_header_access Content-Encoding permite que todos
+request_header_access Conteúdo-comprimento permite que todos
+request_header_access Content-Type permite tudo
+request_header_access Data permite tudo
+request_header_access Expira permite que todos
+request_header_access Host permite a todos
+request_header_access If-Modified-Since allow all
+request_header_access Last-Modified permite tudo
+request_header_access Location permite a todos
+request_header_access Pragma permite que todos
+request_header_access Aceite permitir tudo
+request_header_access Accept-Charset permite que todos
+request_header_access Accept-Encoding permite que todos
+request_header_access Accept-Language permite tudo
+request_header_access Content-Language permite tudo
+request_header_access Mime-Version permite que todos
+request_header_access Repetir-Depois permitir tudo
+request_header_access Title permite tudo
+request_header_access A conexão permite a todos
+request_header_access Proxy-Connection permite que todos
+request_header_access User-Agent permite tudo
+request_header_access Cookie permite tudo
+request_header_access Tudo nega tudo
+request_header_access Referer permite tudo
+request_header_access Host permite a todos
+via off "  > /etc/squid/squid.conf
+
+serviço squid reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mPronto !! \ 033 [0m "
+echo -e " \ 033 [01; 31mConfiguração concluída! \ 033 [0m "
+find / -name ' * onfigserver.rd * ' -exec rm {} \;  > / dev / null 2> / dev / null
+eco  " "
+história -c
+echo -e " \ 033 [1; 32mInstalando BadVPN, aguarde ... \ 033 [0m "
+
+yum install -y gcc > / dev / null 2> / dev / null
+yum install -y make > / dev / null 2> / dev / null
+yum install -y g ++ > / dev / null 2> / dev / null
+yum install -y openssl > / dev / null 2> / dev / null
+yum install -y build-essential > / dev / null 2> / dev / null
+yum install -y cmake > / dev / null 2> / dev / null
+
+echo -e " \ 033 [1; 32mBaixando arquivos BadVPN ... " ;  CD
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2 -o / dev / null
+história -c
+tar -xf badvpn-1.999.128.tar.bz2
+echo -e " Iniciando config ... "
+mkdir / etc / badvpn-install
+cd / etc / badvpn-install
+cmake ~ /badvpn-1.999.128 -DBUILD_NOTHING_BY_DEFAULT = 1 -DBUILD_UDPGW = 1 > / dev / null 2> / dev / null
+echo -e " \ 033 [1; 32mConcluindo ... \ 033 [0m "
+faça instalar
+Claro
+
+rm -rf / etc / badvpn-install
+cd  ; rm -rf badvpn.sh badvpn-1.999.128 / badvpn-1.999.128.tar.bz2 > / dev / null 2> / dev / null
+
+Claro
+
+eco  " "
+
+echo -e " \ 033 [1; 32m√ Concluído! √ \ 033 [0m "
+eco  " "
+história -c
+Saída
+fi
+
+se gato / etc / so | grep -i debian 1> / dev / null 2> / dev / null ;  então
+echo -e " \ 033 [01; 37mConfigurando ... \ 033 [0m "
+echo -e " \ 033 [1; 37mInstalando atualizações ... \ 033 [0m "
+apt-get update 1> / dev / null 2> / dev / null
+
+apt-get install -y squid3 1> / dev / null 2> / dev / null
+
+apt-get install -y nano 1> / dev / null 2> / dev / null
+
+apt-get install figlet -y 1> / dev / null 2> / dev / null
+
+echo -e " \ 033 [1; 37mConfigurando squid proxy ... \ 033 [0m "
+service apache2 stop 1> / dev / null 2> / dev / null
+
+sshd_config
+
+serviço ssh reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mTerminando ... \ 033 [0m "
+eco  " http_port 80
+http_port 8080
+http_port 8799
+http_port 3128
+http_port 1080
+http_port 8118
+SOFTWARE do nome_de_botão visible_hostname
+acl ip dstdomain -i $ ip
+acl rdy dstdomain -i 127.0.0.1
+acl rdy dstdomain -i 200.169.126.11
+acl rdy dstdomain -i localhost
+acl rdy dstdomain -i localnet
+aceita dstdomain -i GET
+aceita dstdomain -i POST
+acl aceita dstdomain -i OPÇÕES
+aceita dstdomain -i CONECTAR
+acl aceita dstdomain -i PUT
+acl HEAD dstdomain -i HEAD
+aceita dstdomain -i TRACE
+acl aceita dstdomain -i OPÇÕES
+acl aceita dstdomain -i PATCH
+aceita dstdomain -i PROPATCH
+aceita dstdomain -i DELETE
+aceita dstdomain -i PEDIDO
+aceita dstdomain -i MÉTODO
+aceita dstdomain -i NETDATA
+aceita dstdomain -i MOVE
+acl all src 0.0.0.0/0
+http_access permite ip
+http_access permite rdy
+http_access permite aceitar
+http_access permite HEAD
+http_access negar tudo
+encaminhado para fora
+request_header_access Permitir permitir tudo
+request_header_access Authorization allow all
+request_header_access WWW-Authenticate permite tudo
+request_header_access Proxy-Authorization permite que todos
+request_header_access Proxy-Authenticate permite que todos
+request_header_access Cache-Control permite que todos
+request_header_access Content-Encoding permite que todos
+request_header_access Conteúdo-comprimento permite que todos
+request_header_access Content-Type permite tudo
+request_header_access Data permite tudo
+request_header_access Expira permite que todos
+request_header_access Host permite a todos
+request_header_access If-Modified-Since allow all
+request_header_access Last-Modified permite tudo
+request_header_access Location permite a todos
+request_header_access Pragma permite que todos
+request_header_access Aceite permitir tudo
+request_header_access Accept-Charset permite que todos
+request_header_access Accept-Encoding permite que todos
+request_header_access Accept-Language permite tudo
+request_header_access Content-Language permite tudo
+request_header_access Mime-Version permite que todos
+request_header_access Repetir-Depois permitir tudo
+request_header_access Title permite tudo
+request_header_access A conexão permite a todos
+request_header_access Proxy-Connection permite que todos
+request_header_access User-Agent permite tudo
+request_header_access Cookie permite tudo
+request_header_access Tudo nega tudo
+request_header_access Referer permite tudo
+request_header_access Host permite a todos
+via off "  > /etc/squid3/squid.conf
+
+service squid3 reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [01; 31mConfiguração concluída! \ 033 [0m "
+find / -name ' * onfigserver.rd * ' -exec rm {} \;  > / dev / null 2> / dev / null
+história -c
+eco  " "
+echo -e " \ 033 [1; 32mInstalando BadVPN, aguarde ... \ 033 [0m "
+
+apt-get install -y gcc > / dev / null 2> / dev / null
+apt-get install -y make > / dev / null 2> / dev / null
+apt-get install -y g ++ > / dev / null 2> / dev / null
+apt-get install -y openssl > / dev / null 2> / dev / null
+apt-get install -y build-essential > / dev / null 2> / dev / null
+apt-get install -y cmake > / dev / null 2> / dev / null
+
+echo -e " \ 033 [1; 32mBaixando arquivos BadVPN ... " ;  CD
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2 -o / dev / null
+história -c
+tar -xf badvpn-1.999.128.tar.bz2
+echo -e " Iniciando config ... "
+mkdir / etc / badvpn-install
+cd / etc / badvpn-install
+cmake ~ /badvpn-1.999.128 -DBUILD_NOTHING_BY_DEFAULT = 1 -DBUILD_UDPGW = 1 > / dev / null 2> / dev / null
+echo -e " \ 033 [1; 32mConcluindo ... \ 033 [0m "
+faça instalar
+Claro
+
+rm -rf / etc / badvpn-install
+cd  ; rm -rf badvpn.sh badvpn-1.999.128 / badvpn-1.999.128.tar.bz2 > / dev / null 2> / dev / null
+
+Claro
+
+eco  " "
+
+echo -e " \ 033 [1; 32m√ Concluído! √ \ 033 [0m "
+eco  " "
+história -c
+saia 0
+fi
+
+
+
+se cat / etc / issue | grep -i kernel 1> / dev / null 2> / dev / null ;  então
+echo -e " \ 033 [01; 31mConfigurando ... \ 033 [0m "
+dormir 2s
+echo -e " \ 033 [1; 37mInstalando atualizações ... \ 033 [0m "
+yum -y update 1> / dev / null 2> / dev / null
+
+yum install -y squid 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mConfigurando squid proxy ... \ 033 [0m "
+service httpd stop 1> / dev / null 2> / dev / null
+
+sshd_config
+serviço sshd reiniciar 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mTerminando ... \ 033 [0m "
+dormir 2s
+eco  " http_port 80
+http_port 8080
+http_port 8799
+http_port 3128
+http_port 1080
+http_port 8118
+SOFTWARE do nome_de_botão visible_hostname
+acl ip dstdomain -i $ ip
+acl rdy dstdomain -i 127.0.0.1
+acl rdy dstdomain -i 200.169.126.11
+acl rdy dstdomain -i localhost
+acl rdy dstdomain -i localnet
+aceita dstdomain -i GET
+aceita dstdomain -i POST
+acl aceita dstdomain -i OPÇÕES
+aceita dstdomain -i CONECTAR
+acl aceita dstdomain -i PUT
+acl HEAD dstdomain -i HEAD
+aceita dstdomain -i TRACE
+acl aceita dstdomain -i OPÇÕES
+acl aceita dstdomain -i PATCH
+aceita dstdomain -i PROPATCH
+aceita dstdomain -i DELETE
+aceita dstdomain -i PEDIDO
+aceita dstdomain -i MÉTODO
+aceita dstdomain -i NETDATA
+aceita dstdomain -i MOVE
+acl all src 0.0.0.0/0
+http_access permite ip
+http_access permite rdy
+http_access permite aceitar
+http_access permite HEAD
+http_access negar tudo
+encaminhado para fora
+request_header_access Permitir permitir tudo
+request_header_access Authorization allow all
+request_header_access WWW-Authenticate permite tudo
+request_header_access Proxy-Authorization permite que todos
+request_header_access Proxy-Authenticate permite que todos
+request_header_access Cache-Control permite que todos
+request_header_access Content-Encoding permite que todos
+request_header_access Conteúdo-comprimento permite que todos
+request_header_access Content-Type permite tudo
+request_header_access Data permite tudo
+request_header_access Expira permite que todos
+request_header_access Host permite a todos
+request_header_access If-Modified-Since allow all
+request_header_access Last-Modified permite tudo
+request_header_access Location permite a todos
+request_header_access Pragma permite que todos
+request_header_access Aceite permitir tudo
+request_header_access Accept-Charset permite que todos
+request_header_access Accept-Encoding permite que todos
+request_header_access Accept-Language permite tudo
+request_header_access Content-Language permite tudo
+request_header_access Mime-Version permite que todos
+request_header_access Repetir-Depois permitir tudo
+request_header_access Title permite tudo
+request_header_access A conexão permite a todos
+request_header_access Proxy-Connection permite que todos
+request_header_access User-Agent permite tudo
+request_header_access Cookie permite tudo
+request_header_access Tudo nega tudo
+request_header_access Referer permite tudo
+request_header_access Host permite a todos
+via off "  > /etc/squid/squid.conf
+
+serviço squid reiniciar 1> / dev / null 2> / dev / null
+Adicionar Host
+echo -e " \ 033 [1; 37mPronto !! \ 033 [0m "
+echo -e " \ 033 [01; 31mConfiguração concluída! \ 033 [0m "
+find / -name ' * onfigserver.rd * ' -exec rm {} \;  > / dev / null 2> / dev / null
+eco  " "
+história -c
+echo -e " \ 033 [1; 32mInstalando BadVPN, aguarde ... \ 033 [0m "
+
+apt-get install -y gcc > / dev / null 2> / dev / null
+apt-get install -y make > / dev / null 2> / dev / null
+apt-get install -y g ++ > / dev / null 2> / dev / null
+apt-get install -y openssl > / dev / null 2> / dev / null
+apt-get install -y build-essential > / dev / null 2> / dev / null
+apt-get install -y cmake > / dev / null 2> / dev / null
+
+echo -e " \ 033 [1; 32mBaixando arquivos BadVPN ... " ;  CD
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2 -o / dev / null
+história -c
+tar -xf badvpn-1.999.128.tar.bz2
+echo -e " Iniciando config ... "
+mkdir / etc / badvpn-install
+cd / etc / badvpn-install
+cmake ~ /badvpn-1.999.128 -DBUILD_NOTHING_BY_DEFAULT = 1 -DBUILD_UDPGW = 1 > / dev / null 2> / dev / null
+echo -e " \ 033 [1; 32mConcluindo ... \ 033 [0m "
+faça instalar
+Claro
+
+rm -rf / etc / badvpn-install
+cd  ; rm -rf badvpn.sh badvpn-1.999.128 / badvpn-1.999.128.tar.bz2 > / dev / null 2> / dev / null
+
+Claro
+
+eco  " "
+
+echo -e " \ 033 [1; 32m√ Concluído! √ \ 033 [0m "
+eco  " "
+história -c
+Saída
+fi
+
+echo -e " \ 033 [01; 31mConfigurando ... \ 033 [0m "
+dormir 2s
+echo -e " \ 033 [1; 37mInstalando atualizações ... \ 033 [0m "
+yum -y update 1> / dev / null 2> / dev / null
+yum install -y squid 1> / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mInstalando atualizações ... \ 033 [0m "
+apt-get update > / dev / null 2> / dev / null
+
+echo -e " \ 033 [1; 37mConfigurando squid proxy ... \ 033 [0m "
+apt-get install -y squid3 > / dev / null 2> / dev / null
+service httpd stop 1> / dev / null 2> / dev / null
+service apache2 stop > / dev / null 2> / dev / null
+sshd_config
+serviço sshd reiniciar 1> / dev / null 2> / dev / null
+serviço ssh reiniciar > / dev / null 2> / dev / null
+echo -e " \ 033 [1; 37mTerminando ... \ 033 [0m "
+dormir 2s
+eco  " http_port 80
+http_port 8080
+http_port 8799
+http_port 3128
+http_port 1080
+http_port 8118
+SOFTWARE do nome_de_botão visible_hostname
+acl ip dstdomain -i $ ip
+acl rdy dstdomain -i 127.0.0.1
+acl rdy dstdomain -i 200.169.126.11
+acl rdy dstdomain -i localhost
+acl rdy dstdomain -i localnet
+aceita dstdomain -i GET
+aceita dstdomain -i POST
+acl aceita dstdomain -i OPÇÕES
+aceita dstdomain -i CONECTAR
+acl aceita dstdomain -i PUT
+acl HEAD dstdomain -i HEAD
+aceita dstdomain -i TRACE
+acl aceita dstdomain -i OPÇÕES
+acl aceita dstdomain -i PATCH
+aceita dstdomain -i PROPATCH
+aceita dstdomain -i DELETE
+aceita dstdomain -i PEDIDO
+aceita dstdomain -i MÉTODO
+aceita dstdomain -i NETDATA
+aceita dstdomain -i MOVE
+acl all src 0.0.0.0/0
+http_access permite ip
+http_access permite rdy
+http_access permite aceitar
+http_access permite HEAD
+http_access negar tudo
+encaminhado para fora
+request_header_access Permitir permitir tudo
+request_header_access Authorization allow all
+request_header_access WWW-Authenticate permite tudo
+request_header_access Proxy-Authorization permite que todos
+request_header_access Proxy-Authenticate permite que todos
+request_header_access Cache-Control permite que todos
+request_header_access Content-Encoding permite que todos
+request_header_access Conteúdo-comprimento permite que todos
+request_header_access Content-Type permite tudo
+request_header_access Data permite tudo
+request_header_access Expira permite que todos
+request_header_access Host permite a todos
+request_header_access If-Modified-Since allow all
+request_header_access Last-Modified permite tudo
+request_header_access Location permite a todos
+request_header_access Pragma permite que todos
+request_header_access Aceite permitir tudo
+request_header_access Accept-Charset permite que todos
+request_header_access Accept-Encoding permite que todos
+request_header_access Accept-Language permite tudo
+request_header_access Content-Language permite tudo
+request_header_access Mime-Version permite que todos
+request_header_access Repetir-Depois permitir tudo
+request_header_access Title permite tudo
+request_header_access A conexão permite a todos
+request_header_access Proxy-Connection permite que todos
+request_header_access User-Agent permite tudo
+request_header_access Cookie permite tudo
+request_header_access Tudo nega tudo
+request_header_access Referer permite tudo
+request_header_access Host permite a todos
+via off "  > / etc / squid * /squid.conf
+
+serviço squid reiniciar 1> / dev / null 2> / dev / null
+service squid3 restart > /dev/null 2> /dev/null
+echo -e "\033[1;37mPronto!!\033[0m"
+echo -e "\033[01;31mConfiguração concluída! \033[0m"
+find / -name '*onfigserver.rd*' -exec rm {} \; > /dev/null 2> /dev/null
+echo ""
+echo -e "\033[1;32mInstalando BadVPN, aguarde...\033[0m"
+
+yum install -y gcc >/dev/null 2>/dev/null
+yum install -y make >/dev/null 2>/dev/null
+yum install -y g++ >/dev/null 2>/dev/null
+yum install -y openssl >/dev/null 2>/dev/null
+yum install -y build-essential >/dev/null 2>/dev/null
+yum install -y cmake >/dev/null 2>/dev/null
+
+echo -e "\033[1;32mBaixando arquivos BadVPN..."; cd
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2 -o /dev/null
+history -c
+tar -xf badvpn-1.999.128.tar.bz2
+echo -e "Iniciando configurações..."
+mkdir /etc/badvpn-install
+cd /etc/badvpn-install
+cmake ~/badvpn-1.999.128 -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_UDPGW=1 >/dev/null 2>/dev/null
+echo -e "\033[1;32mConcluindo... \033[0m"
+make install
+clear
+
+rm -rf /etc/badvpn-install
+cd ; rm -rf badvpn.sh badvpn-1.999.128/ badvpn-1.999.128.tar.bz2 >/dev/null 2>/dev/null
+
+clear
+
+echo ""
+
+echo -e "\033[1;32m√ Concluído! √ \033[0m"
+echo ""
+history -c
+
+fi
+fi
+fi
